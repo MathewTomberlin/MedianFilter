@@ -1,0 +1,23 @@
+#Name: MedianFilter
+#Author: Mathew Tomberlin
+#Date:9/7/2016
+#Abstract: This class takes a series of images with a static background and filters
+#out divergent values (I.E. parts of the images that are different between images)
+
+#Project files can be downloaded from GitHub 
+#at https://github.com/CrimsonOctopus/MedianFilter
+
+First it checks if the OriginalImages folder exists in the program path. Then it gets the height and width of the first image in the folder and creates the master array and new array.
+
+For each rgb color [r=0,g=1,b=2] in the pixel at (x,y), start at 0 and count up through the current document we're processing
+
+If the rgb value of the pixel at (x,y) is less than or equal to the value stored for that rgb color at pixel (x,y) at i, then store the previous value and set the value stored to the pixel rgb value
+Once the above occurs, get the value at the next array slot and move the previous value to the next slot to move the values up to sort them.
+
+For each image in the 'OriginalImages' folder, try to load the image. If it is loaded, get each pixel in the image and add it to the master pixel array using the pixelToArray() method. That method inserts each color value of the pixel in to the master array in order
+
+For each rgb color in each pixel: 
+If the number of images is even, add the middle two image's rgb color value together and divide by two (Find the median)
+If the number of images is odd, the middle image's rgb color value is divided by two (Find the median)
+
+Finally the file is saved with a unique filename

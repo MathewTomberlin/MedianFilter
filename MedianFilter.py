@@ -1,12 +1,17 @@
+#Name: MedianFilter
+#Author: Mathew Tomberlin
+#Date:9/7/2016
+#Abstract: This class takes a series of images with a static background and filters
+#out divergent values (I.E. parts of the images that are different between images)
+
+#Project files can be downloaded from GitHub 
+#at https://github.com/CrimsonOctopus/MedianFilter
+
 from PIL import Image
 import numpy as np
 import os
 import os.path
 import math
-#Name: MedianFilter
-#Author: Mathew Tomberlin
-#Date:9/7/2016
-#Abstract: This class 
 
 #Check if the OriginalImages folder exists in the program path
 if(os.path.exists("OriginalImages")):
